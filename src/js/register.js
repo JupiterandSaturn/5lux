@@ -19,8 +19,8 @@ $(function() {
 				$testNum.html(newStr);
 			})
 			$register.click(function() {
-					if(!(/^\d{11}$/.test(name.value))) {
-						alert('手机号请输入11位有效数字！');
+					if(!(/^0?(13|14|15|18|17)[0-9]{9}$/.test(name.value)) && !( /\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}/.test(name.value))){
+						alert('您注册的账号格式有误，请重新注册！');
 					} else {
 						if($inputTestNum.val() !== $testNum.html()) {
 							alert('请重新输入验证码！');
@@ -40,8 +40,11 @@ $(function() {
 						}
 
 					}
+					})
+					
+				
 
-			})
+			
 			})
 function $id(id){
 			return document.querySelector(id);
